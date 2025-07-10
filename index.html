@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Task Manager</h1>
+            <p>Organize your tasks efficiently</p>
+        </header>
+
+        <!-- Task Input Section -->
+        <div class="task-input-section">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Enter your task here..." maxlength="100">
+                <button id="addTaskBtn" class="add-btn">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-list"></i> All
+            </button>
+            <button class="filter-btn" data-filter="pending">
+                <i class="fas fa-clock"></i> Pending
+            </button>
+            <button class="filter-btn" data-filter="completed">
+                <i class="fas fa-check-circle"></i> Completed
+            </button>
+        </div>
+
+        <!-- Task Statistics -->
+        <div class="task-stats">
+            <span class="stat-item">
+                <i class="fas fa-tasks"></i> Total: <span id="totalTasks">0</span>
+            </span>
+            <span class="stat-item">
+                <i class="fas fa-clock"></i> Pending: <span id="pendingTasks">0</span>
+            </span>
+            <span class="stat-item">
+                <i class="fas fa-check-circle"></i> Completed: <span id="completedTasks">0</span>
+            </span>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list" id="taskList">
+            <!-- Tasks will be dynamically added here -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>No tasks yet!</h3>
+            <p>Add your first task to get started</p>
+        </div>
+
+        <!-- Clear All Button -->
+        <div class="clear-section" id="clearSection" style="display: none;">
+            <button id="clearAllBtn" class="clear-btn">
+                <i class="fas fa-trash"></i> Clear All Tasks
+            </button>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Task</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="editTaskInput" placeholder="Edit your task...">
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelEdit">Cancel</button>
+                <button class="save-btn" id="saveEdit">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
